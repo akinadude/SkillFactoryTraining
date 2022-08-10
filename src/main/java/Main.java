@@ -1,6 +1,4 @@
 import module_7.HashMatrix;
-import module_7.HashString;
-import module_7.PolynomialHashing;
 
 public class Main {
 
@@ -70,7 +68,7 @@ public class Main {
                 {7, 2, 3, 1},
         };
         HashMatrix hm = new HashMatrix(matrix);
-        hm.isEqual(0, 2, 2,4, 2,4,2,4);
+        hm.isEqual(0, 2, 2, 4, 2, 4, 2, 4);
         //hm.isEqual(0,2,1,3,2,4,1,3);
         //hm.isEqual(0,2,0,2,1,3,1,3);
     }
