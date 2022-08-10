@@ -1,8 +1,8 @@
-package gitbisect;
+package module_6.gitbisect;
 
 import java.io.InputStream;
 
-interface ResultHandler {
+public interface ResultHandler {
 
     void handleResult(InputStream is, GobblerType type);
 }

@@ -1,13 +1,15 @@
-package gitbisect;
+package module_6.gitbisect;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CheckIfFileExistsHandler implements ResultHandler {
+public class GetCommitHashesHandler implements ResultHandler {
 
-    private boolean fileExists = false;
+    private final List<String> commitHashes = new ArrayList<>();
 
     @Override
     public void handleResult(InputStream is, GobblerType type) {
@@ -17,12 +19,7 @@ public class CheckIfFileExistsHandler implements ResultHandler {
                 if (type == GobblerType.Error) {
                     System.out.println(type + "> " + line);
                 } else if (type == GobblerType.Output) {
-                    if (line.contains("bisect.py")) {
-                        fileExists = true;
-                    }
-                    if (line.contains("No such file")) {
-                        fileExists = false;
-                    }
+                    commitHashes.add(line);
                 }
             }
         } catch (IOException ioe) {
@@ -30,7 +27,7 @@ public class CheckIfFileExistsHandler implements ResultHandler {
         }
     }
 
-    public boolean getResult() {
-        return fileExists;
+    public List<String> getResult() {
+        return commitHashes;
     }
 }

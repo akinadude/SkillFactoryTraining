@@ -1,4 +1,4 @@
-package gitbisect;
+package module_6.gitbisect;
 
 import java.io.BufferedReader;
 import java.io.IOException;
