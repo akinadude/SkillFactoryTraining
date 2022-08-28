@@ -1,5 +1,10 @@
+import javafx.util.Pair;
 import module_7.SubmatrixOneErrorFinder;
 import module_7.SubstringOneErrorFinder;
+import module_8.Assignment_8_2_5;
+import module_8.Assignment_8_4_1;
+
+import static module_8.Assignment_8_2_5.solution;
 
 public class Main {
 
@@ -79,17 +84,36 @@ public class Main {
 
         //SubstringOneErrorFinder.isSubString("abcdef", "bcze");
 
-        int[][] sMatrix = {
-                {1, 2, 3, 6},
-                {4, 5, 6, 6},
-                {7, 8, 4, 3},
-                {7, 3, 7, 9},
-        };
-        int[][] tMatrix = {
-                {5, 6, 6},
-                {8, 0, 3},
-                {3, 7, 9},
-        };
-        SubmatrixOneErrorFinder.isSubMatrix(sMatrix, tMatrix);
+//        int[][] sMatrix = {
+//                {1, 2, 3, 6},
+//                {4, 5, 6, 6},
+//                {7, 8, 4, 3},
+//                {7, 3, 7, 9},
+//        };
+//        int[][] tMatrix = {
+//                {5, 6, 6},
+//                {8, 0, 3},
+//                {3, 7, 9},
+//        };
+//        SubmatrixOneErrorFinder.isSubMatrix(sMatrix, tMatrix);
+
+        // =======================
+
+        // Integer t1[] = {0, 1, 2, 3, 100};
+        // Pair<Integer, Integer> was1 = solution(t1, 5); //2,3
+        // System.out.println("l,r = " + was1.getKey() + "," + was1.getValue());
+
+        /*Integer[] t2 = {1, 3, 5, 8, 9, 1};
+        Pair<Integer, Integer> p2 = Assignment_8_2_5.solution(t2, 10); //4,5
+        System.out.println("l,r = " + p2.getKey() + "," + p2.getValue());*/
+
+        // Integer t3[] = {0, 1, 2, 3, 4, 5};
+        // Pair<Integer, Integer> p3 = solution(t3, 6); //0,3
+        // System.out.println("l,r = " + p3.getKey() + "," + p3.getValue());
+
+        // =======================
+
+
+        new Assignment_8_4_1().execute(args);
     }
 }
