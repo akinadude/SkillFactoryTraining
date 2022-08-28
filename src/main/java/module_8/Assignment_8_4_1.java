@@ -39,7 +39,7 @@ public class Assignment_8_4_1 {
             FileInputStream inputStream = new FileInputStream(fileName);
             byte[] buffer = new byte[PIECE_SIZE];
 
-            int bytesAmountRead = 0;
+            int bytesAmountRead;
             while ((bytesAmountRead = inputStream.read(buffer)) != -1) {
                 Logger.log("Bytes amount read: %s", bytesAmountRead);
 
@@ -125,12 +125,11 @@ public class Assignment_8_4_1 {
     }
 
     private String generateMagnetLink(String topHashHex, String fileName) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("magnet:?xt=urn:btmh:");
-        sb.append(topHashHex);
-        sb.append("&dn=");
-        sb.append(fileName);
+        String magnetLink = "magnet:?xt=urn:btmh:" +
+                topHashHex +
+                "&dn=" +
+                fileName;
 
-        return sb.toString();
+        return magnetLink;
     }
 }
