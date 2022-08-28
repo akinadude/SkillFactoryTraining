@@ -24,12 +24,13 @@ public class Assignment_8_4_1 {
 
         String fileName = params[0];
 
-        //todo Break down a file into 16kb pieces;
-        // If last piece size is less than 16bk, fill the rest of it by zero bytes
-        // It must be even number of pieces; if it's not duplicate the last piece
-        // Hash pieces; generate SHA-256 for each piece
-        // Calculate hash of each pair of pieces; do it recursively and get top hash
-        // Generate magnet link
+        // The plan
+        // 1. Break down a file into 16kb pieces;
+        // 2. If last piece size is less than 16bk, fill the rest of it by zero bytes
+        // 3. It must be even number of pieces; if it's not duplicate the last piece
+        // 4. Hash pieces; generate SHA-256 for each piece
+        // 5. Calculate hash of each pair of pieces; do it recursively and get top hash
+        // 6. Generate magnet link
 
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
