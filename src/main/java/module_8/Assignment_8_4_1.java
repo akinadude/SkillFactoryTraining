@@ -14,6 +14,9 @@ public class Assignment_8_4_1 {
     // Magnet link example (bittorent v2):
     // magnet:?xt=urn:btmh:1220caf1e1c30e81cb361b9ee167c4aa64228a7fa4fa9f6105232b28ad099f3a302e&dn=bittorrent-v2-test
 
+    // Usage:
+    // java -classpath <path_to_classes> Main <file>
+
     private final int PIECE_SIZE = 16 * 1024;
 
     public void execute(String[] params) {
