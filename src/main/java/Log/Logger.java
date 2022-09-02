@@ -1,16 +1,28 @@
 package Log;
 
+import java.util.List;
+
 public class Logger {
 
     public static void logArray(int[] array) {
         for (int j = 0; j < array.length; j++) {
             System.out.print(array[j] + ", ");
         }
+
+        System.out.println();
+    }
+
+    public static <T> void logList(List<T> list) {
+        for (T element : list) {
+            System.out.print(element.toString() + ", ");
+        }
+
+        System.out.println();
     }
 
     public static void logMatrix(long[][] matrix) {
         int n = matrix.length;
-        for (int i = 0; i < n ; i++) {
+        for (int i = 0; i < n; i++) {
 
             int m = matrix[i].length;
             for (int j = 0; j < m; j++) {
@@ -18,11 +30,13 @@ public class Logger {
             }
             System.out.println();
         }
+
+        System.out.println();
     }
 
     public static void logMatrix(int[][] matrix) {
         int n = matrix.length;
-        for (int i = 0; i < n ; i++) {
+        for (int i = 0; i < n; i++) {
 
             int m = matrix[i].length;
             for (int j = 0; j < m; j++) {

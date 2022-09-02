@@ -1,10 +1,4 @@
-import javafx.util.Pair;
-import module_7.SubmatrixOneErrorFinder;
-import module_7.SubstringOneErrorFinder;
-import module_8.Assignment_8_2_5;
-import module_8.Assignment_8_4_1;
-
-import static module_8.Assignment_8_2_5.solution;
+import module_9.Assignment_9_2_4;
 
 public class Main {
 
@@ -100,7 +94,7 @@ public class Main {
         // =======================
 
         // Integer t1[] = {0, 1, 2, 3, 100};
-        // Pair<Integer, Integer> was1 = solution(t1, 5); //2,3
+        // Pair<Integer, Integer> was1 = Assignment_8_2_5.solution(t1, 5); //2,3
         // System.out.println("l,r = " + was1.getKey() + "," + was1.getValue());
 
         /*Integer[] t2 = {1, 3, 5, 8, 9, 1};
@@ -108,12 +102,15 @@ public class Main {
         System.out.println("l,r = " + p2.getKey() + "," + p2.getValue());*/
 
         // Integer t3[] = {0, 1, 2, 3, 4, 5};
-        // Pair<Integer, Integer> p3 = solution(t3, 6); //0,3
+        // Pair<Integer, Integer> p3 = Assignment_8_2_5.solution(t3, 6); //0,3
         // System.out.println("l,r = " + p3.getKey() + "," + p3.getValue());
 
         // =======================
 
 
-        new Assignment_8_4_1().execute(args);
+        //new Assignment_8_4_1().execute(args);
+
+        //new Assignment_9_2_3().execute();
+        new Assignment_9_2_4().execute();
     }
 }

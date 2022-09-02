@@ -5,7 +5,7 @@ import java.util.List;
 
 import javafx.util.Pair;
 
-//Find continuous subarray of sum equals k
+//Find continuous subarray of sum k
 public class Assignment_8_2_5 {
 
     //index 0: sum of elements by indices [0, 1)
