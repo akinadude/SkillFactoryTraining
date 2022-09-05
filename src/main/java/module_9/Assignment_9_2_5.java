@@ -13,7 +13,9 @@ public class Assignment_9_2_5 {
 
     private final int M = 100;
     private final int N = 100;
-    private List<List<Integer>> adjacentList = new ArrayList<>();
+    private final List<List<Integer>> adjacentList = new ArrayList<>();
+
+    private final String subStringToCount = "001001";
 
     public Assignment_9_2_5() {
         String fileName = "module_9/graph_adj_list_assignment_9_2_5.txt";
@@ -58,24 +60,23 @@ public class Assignment_9_2_5 {
 
         List<String> adjacentMatrixTextTable = new ArrayList<>();
         for (int i = 0; i < N; i++) {
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             for (int j = 0; j < M; j++) {
                 if (adjacentMatrix[i][j] == 1) {
-                    stringBuilder.append("1");
+                    sb.append("1");
                 } else {
-                    stringBuilder.append("0");
+                    sb.append("0");
                 }
             }
 
-            adjacentMatrixTextTable.add(stringBuilder.toString());
+            adjacentMatrixTextTable.add(sb.toString());
         }
 
         //Logger.logList(adjacentMatrixTextTable);
-        String subString = "001001";
         int sum = 0;
-        for (String s : adjacentMatrixTextTable) {
-            if (s.contains(subString)) {
+        for (String row : adjacentMatrixTextTable) {
+            if (row.contains(subStringToCount)) {
                 sum++;
             }
         }
