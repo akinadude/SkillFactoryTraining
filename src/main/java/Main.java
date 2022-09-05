@@ -1,4 +1,5 @@
 import module_9.Assignment_9_2_4;
+import module_9.Assignment_9_2_5;
 
 public class Main {
 
@@ -111,6 +112,7 @@ public class Main {
         //new Assignment_8_4_1().execute(args);
 
         //new Assignment_9_2_3().execute();
-        new Assignment_9_2_4().execute();
+        //new Assignment_9_2_4().execute();
+        new Assignment_9_2_5().execute();
     }
 }

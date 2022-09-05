@@ -44,6 +44,8 @@ public class Logger {
             }
             System.out.println();
         }
+
+        System.out.println();
     }
 
     public static void log(String s, Object... args) {

@@ -16,7 +16,7 @@ public class Assignment_9_2_4 {
     private List<Edge> edges = new ArrayList<>();
 
     public Assignment_9_2_4() {
-        String fileName = "module_9/graph_adj_matrix_assignment_9_2_4.txt";
+        String fileName = "module_9/graph_edge_list_assignment_9_2_4.txt";
 
         FileUtils fileUtils = new FileUtils();
         InputStream inputStream = fileUtils.getFileFromResourceAsStream(fileName);
