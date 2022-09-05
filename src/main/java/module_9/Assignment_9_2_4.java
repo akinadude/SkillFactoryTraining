@@ -5,9 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import Log.Logger;
 
@@ -55,13 +56,11 @@ public class Assignment_9_2_4 {
     }
 
     public void execute() {
-        Map<Integer, List<Integer>> adjacentList = asAdjacentList(edges);
+        List<List<Integer>> adjacentList = asAdjacentList(edges);
 
         List<Integer> hashesList = new ArrayList<>();
 
-        for (Map.Entry<Integer, List<Integer>> entry : adjacentList.entrySet()) {
-            List<Integer> toVertices = entry.getValue();
-
+        for (List<Integer> toVertices : adjacentList) {
             int sum = toVertices.stream().reduce(0, Integer::sum);
             int size = toVertices.size();
             int hash = size * sum;
@@ -74,21 +73,31 @@ public class Assignment_9_2_4 {
         Logger.log("Result: " + hashesSum);
     }
 
-    private Map<Integer, List<Integer>> asAdjacentList(List<Edge> edges) {
-        Map<Integer, List<Integer>> result = new HashMap<>();
+    private List<List<Integer>> asAdjacentList(List<Edge> edges) {
+        int fromMax = edges.stream()
+                .map(Edge::getFrom)
+                .max(Comparator.naturalOrder())
+                .orElse(0);
+
+        int toMax = edges.stream()
+                .map(Edge::getTo)
+                .max(Comparator.naturalOrder())
+                .orElse(0);
+
+        int max = Math.max(fromMax, toMax);
+        Logger.log("Max vertex number: %d", max);
+
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < max + 1; i++) {
+            List<Integer> verticesByFrom = new ArrayList<>();
+            result.add(verticesByFrom);
+        }
 
         for (Edge e : edges) {
             int from = e.getFrom();
             int to = e.getTo();
 
-            List<Integer> verticesByFrom = result.get(from);
-            if (verticesByFrom == null) {
-                verticesByFrom = new ArrayList<>();
-                verticesByFrom.add(to);
-                result.put(from, verticesByFrom);
-            }
-
-            verticesByFrom.add(to);
+            result.get(from).add(to);
         }
 
         return result;

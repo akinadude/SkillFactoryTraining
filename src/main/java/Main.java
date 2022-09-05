@@ -112,7 +112,7 @@ public class Main {
         //new Assignment_8_4_1().execute(args);
 
         //new Assignment_9_2_3().execute();
-        //new Assignment_9_2_4().execute();
-        new Assignment_9_2_5().execute();
+        new Assignment_9_2_4().execute();
+        //new Assignment_9_2_5().execute();
     }
 }
