@@ -96,6 +96,9 @@ public class Assignment_9_2_4 {
             int to = e.getTo();
 
             result.get(from).add(to);
+
+            // It's undirected graph, so we need to do this
+            result.get(to).add(from);
         }
 
         return result;
